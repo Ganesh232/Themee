@@ -1,0 +1,21 @@
+{% comment %} <h1>Ganesh232</h1> {% endcomment %}
+{% comment %} <img src="{{'Avatar.png' | asset_url }}" /> {% endcomment %}
+<h2>{{ collections['frontpage'].title }}</h2>
+   {% comment %} {% section 'slideshow' %} {% endcomment %}
+       <div  >
+        {% for product in collections['frontpage'].products %}
+                    <div >
+                    <hr/>
+                            <a href ="{{ product.url }}">
+                            <img src="{{ product.featured_image | image_url : width :300 }}"/>
+                            {% comment %} <h3>{{ product.title }}</h3> {% endcomment %}
+                            <p>{{ product.price | money }}</p>
+                            {{- product.title | link_to: product.url }}
+                            </a>
+                    </div>
+
+        {% endfor %}
+
+
+
+       </div>
